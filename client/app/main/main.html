@@ -1,0 +1,87 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Chris Kennedy</h1>
+    <p class="lead">Welcome to my slice of the internet.</p>
+    <img src="assets/images/hustler.jpg" alt="Kri">
+    <h2>{{date | date:'HH:mm:ss'}} GMT</h2>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div id="ribbon">
+      	<div class="inset"></div>
+      	<div class="rib-container">
+      		<div class="base">
+            <ul>
+              <li><a href="https://www.facebook.com/Kriy0" tooltip-placement="bottom" tooltip="My Facebook."><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/Kr1yo" tooltip-placement="bottom" tooltip="My Twitter."><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://github.com/Kriyo" tooltip-placement="bottom" tooltip="My Git Page."><i class="fa fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/profile/view?id=164953250" tooltip-placement="bottom" tooltip="My LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+      		<div class="left_corner"></div>
+      		<div class="right_corner"></div>
+      	</div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <h1 class="page-header">This Stack:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li><a ng-href="{{thing.link}}" tooltip-placement="bottom" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+  <form class="thing-form">
+    <label>Add another!</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+      </span>
+    </p>
+  </form>
+
+  <div class="row">
+    <div class="col-lg-12">
+        <h2>Blog Posts</h2>
+        <ul ng-repeat="blogPost in blogPosts">
+          <li class="blog-container">
+            <div>
+              <h2>{{blogPost.title}} - <small>{{blogPost.date}}</small></h2>
+              <button type="button" class="close" ng-click="deletePost(blogPost)">&times;</button>
+              <p class="lead">{{blogPost.content}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <form role="form" class="thing-form">
+        <div class="form-group">
+          <label>Another Blog Post</label>
+          <input type="text" class="form-control" placeholder="Add title here." ng-model="newTitlePost">
+        </div>
+        <div class="form-group">
+          <textarea rows="10" class="form-control" placeholder="Add blog post here." ng-model="newContentPost"></textarea>
+        </div>
+        <div class="form-group">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click="addPost()">Add New</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Chris Kennedy |
+      <a href="https://twitter.com/Kr1yo">@Kr1yo</a> |
+    </p>
+  </div>
+</footer>

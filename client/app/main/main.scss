@@ -1,0 +1,182 @@
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+/*header{
+	width: 100%;
+	height: 300px;
+	background-color: #3498db;
+	text-align: center;
+	position: relative;
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+	@include transition(all .5s ease);
+}*/
+.hero-unit {
+    position: relative;
+    height: 565px;
+    padding: 30px 15px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: url('/assets/images/bigbackground.jpg') !important;
+    .container{
+      img{
+        border-radius: 100%;
+        -moz-box-shadow: 0px 0px 10px #FFF;
+        -webkit-box-shadow: 0px 0px 10px #FFF;
+        box-shadow: 0px 0px 10px #FFF;
+        border: 2px solid #FFF;
+      }
+      h1, p{
+        color: #222;
+        text-shadow: 0px 2px 3px #555;
+      }
+      h2{
+        font-weight: 100;
+      }
+    }
+}
+
+#ribbon {
+	width: 180px;
+	height: 280px;
+	margin: 50px auto 0;
+	position: relative;
+	overflow: hidden;
+
+  .inset {
+    width: 200px;
+    height: 55px;
+    position: absolute;
+    top: -50px;
+    left: -10px;
+    z-index: 5;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+  }
+  .rib-container {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 250px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-left: 1px solid #631a15;
+    border-right: 1px solid #631a15;
+  }
+  .base {
+    display: block;
+    height: 200px;
+    width: 100px;
+    background: rgb(199,59,60);
+    background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
+    background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+    background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+    background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
+    position: relative;
+    z-index: 2;
+    ul{
+      display: block;
+      padding: 20px 0 5px 0;
+      text-align: center;
+      list-style: none;
+      li{
+        display:block;
+        a{
+          display: block;
+          width: 100%;
+          font-size: 2em;
+          color: darken($banner-red, 20%);
+          text-shadow: 1px 4px 6px $banner-red, 0 0 0 lighten($banner-red, 5%), 1px 4px 6px $banner-red;
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 86px;
+      left: 6px;
+      height: 242px;
+      z-index: -1;
+      border-left: 1px dashed #631a15;
+      border-right: 1px dashed #631a15;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 86px;
+      left: 7px;
+      height: 242px;
+      z-index: -1;
+      border-left: 1px dashed #da5050;
+      border-right: 1px dashed #da5050;
+    }
+  }
+
+  .left_corner {
+    width: 100px;
+    height: 100px;
+    background: #b8201f;
+    position: absolute;
+    bottom: 20px;
+    left: -50px;
+    z-index: 1;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .right_corner {
+    width: 100px;
+    height: 100px;
+    background: #b8201f;
+    position: absolute;
+    bottom: 20px;
+    right: -50px;
+    z-index: 1;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+.blog-container{
+  background: #f9f9f9;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
