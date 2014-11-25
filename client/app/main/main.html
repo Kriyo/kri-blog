@@ -51,7 +51,7 @@
         <ul ng-repeat="blogPost in blogPosts">
           <li class="blog-container">
             <div>
-              <h2>{{blogPost.title}} - <small>{{blogPost.date}}</small></h2>
+              <h2>{{blogPost.title}} - {{blogPost.postDate}}</h2>
               <button type="button" class="close" ng-click="deletePost(blogPost)">&times;</button>
               <p class="lead">{{blogPost.content}}</p>
             </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ngkriApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth) {
     $scope.awesomeThings = [];
     $scope.blogPosts = [];
 
@@ -12,6 +12,7 @@ angular.module('ngkriApp')
       $scope.$apply(updateTime);
     }, 1000);
     updateTime();
+
 
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -39,11 +40,13 @@ angular.module('ngkriApp')
 
 
     $http.get('/api/blogPost').success(function(blogPosts) {
+      //console.log(blogPosts._id.getTimestamp() );
       $scope.blogPosts = blogPosts;
       socket.syncUpdates('blogPost', $scope.blogPosts);
     });
 
-    $scope.addPost = function(){
+    $scope.addPost = function(blogPosts){
+      //$scope.postDate = blogPost._id;
 
       if($scope.newTitlePost === ''){
         return;
@@ -61,7 +64,7 @@ angular.module('ngkriApp')
       });
       $scope.newTitlePost = '';
       $scope.newContentPost = '';
-      $scope.date = '';
+      $scope.time = '';
     };
 
     $scope.deletePost = function(blogPost) {
@@ -72,4 +75,3 @@ angular.module('ngkriApp')
       socket.unsyncUpdates('blogPost');
     });
   });
-  
