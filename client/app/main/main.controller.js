@@ -2,9 +2,15 @@
 
 angular.module('ngkriApp')
   .controller('MainCtrl', function ($scope, $http, socket, Auth) {
+
+    // Arrays for thumbnails and posts
     $scope.awesomeThings = [];
     $scope.blogPosts = [];
 
+    // Auth for ng-show
+    $scope.isAdmin = Auth.isAdmin;
+
+    // Dynamic Clock.
     var updateTime = function(){
       $scope.date = new Date();
     };
@@ -14,13 +20,13 @@ angular.module('ngkriApp')
     updateTime();
 
 
-
+    // API Request to populate tooltip thumbs.
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
 
-
+    // Add a new thumb
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
@@ -29,6 +35,7 @@ angular.module('ngkriApp')
       $scope.newThing = '';
     };
 
+    // Delete a thumb
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
@@ -38,7 +45,7 @@ angular.module('ngkriApp')
     });
 
 
-
+    // API request for pulling in the blogposts
     $http.get('/api/blogPost').success(function(blogPosts) {
       //console.log(blogPosts._id.getTimestamp() );
       $scope.blogPosts = blogPosts;

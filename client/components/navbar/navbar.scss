@@ -1,0 +1,13 @@
+.navbar.navbar-default.navbar-fixed-top{
+  border-bottom: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid red;
+  height: 55px;
+  top: 0;
+  position: absolute;
+  /* hold tight... */
+  visibility: none;
+  /* we'll override these shortly */
+  z-index: 1000;
+  width: 100%;
+}

@@ -1,15 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
+<header class="hero-unit" id="banner" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;">
   <div class="container">
-    <h1>Chris Kennedy</h1>
-    <p class="lead">Welcome to my slice of the internet.</p>
+    <h1 skrollr data-50="opacity:1;" data-150="opacity:0;">Chris Kennedy</h1>
+    <p skrollr data-50="opacity:1;" data-200="opacity:0;" class="lead">Welcome to my slice of the internet.</p>
     <img src="assets/images/hustler.jpg" alt="Kri">
-    <h2>{{date | date:'HH:mm:ss'}} GMT</h2>
+    <h2>{{date | date:'HH:mm:ss'}}</h2>
   </div>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x inversed"></i>
+    <i class="fa fa-arrow-down fa-stack-1x"></i>
+  </span>
 </header>
 
-<div class="container">
+<div id="testingcontent" class="container">
   <div class="row">
     <div class="col-lg-3">
       <div id="ribbon">
@@ -29,30 +33,22 @@
       </div>
     </div>
     <div class="col-lg-9">
-      <h1 class="page-header">This Stack:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a ng-href="{{thing.link}}" tooltip-placement="bottom" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      <h3>A little about me...</h3>
+      <ul>
+        <li>I'm a software engineer and web developer.</li>
       </ul>
     </div>
   </div>
-  <form class="thing-form">
-    <label>Add another!</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
-
   <div class="row">
     <div class="col-lg-12">
         <h2>Blog Posts</h2>
-        <ul ng-repeat="blogPost in blogPosts">
-          <li class="blog-container">
+        <input type="search" ng-model="searchPosts" class="form-control" placeholder="Search for Post">
+        <ul>
+          <li class="animate-repeat blog-container" ng-repeat="blogPost in blogPosts | filter:searchPosts">
             <div>
-              <h2>{{blogPost.title}} - {{blogPost.postDate}}</h2>
-              <button type="button" class="close" ng-click="deletePost(blogPost)">&times;</button>
+              <h2>{{blogPost.title}}</h2>
+              <p>{{blogPost.time | date: 'dd-MM-yyyy'}}</p>
+              <button ng-show="isAdmin()" type="button" class="close" ng-click="deletePost(blogPost)">&times;</button>
               <p class="lead">{{blogPost.content}}</p>
             </div>
           </li>
@@ -60,7 +56,7 @@
       </div>
     </div>
     <div class="col-lg-12">
-      <form role="form" class="thing-form">
+      <form ng-show="isAdmin()" role="form" class="thing-form">
         <div class="form-group">
           <label>Another Blog Post</label>
           <input type="text" class="form-control" placeholder="Add title here." ng-model="newTitlePost">
@@ -75,6 +71,22 @@
         </div>
       </form>
     </div>
+    <div class="col-lg-12">
+      <h1 class="page-header">This Stack:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+        <li><a ng-href="{{thing.link}}" tooltip-placement="bottom" tooltip="{{thing.info}}">{{thing.name}}<button ng-show="isAdmin()" type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+      </ul>
+    </div>
+    <form ng-show="isAdmin()" class="thing-form">
+      <label>Add another!</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
+        </span>
+      </p>
+    </form>
+
   </div>
 </div>
 

@@ -12,20 +12,9 @@
     line-height: 1;
     letter-spacing: -1px;
 }
-/*header{
-	width: 100%;
-	height: 300px;
-	background-color: #3498db;
-	text-align: center;
-	position: relative;
-	position: fixed;
-	top: 0;
-	overflow: hidden;
-	@include transition(all .5s ease);
-}*/
 .hero-unit {
     position: relative;
-    height: 565px;
+    height: 700px;
     padding: 30px 15px;
     color: #F5F5F5;
     text-align: center;
@@ -43,9 +32,12 @@
         color: #222;
         text-shadow: 0px 2px 3px #555;
       }
-      h2{
+      h1, h2{
         font-weight: 100;
       }
+    }
+    .fa.fa-circle.fa-stack-2x.inversed{
+      color: rgba(0,0,0,0.5);
     }
 }
 
@@ -179,4 +171,63 @@
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+
+// Angular Animation classes.
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  /*box-sizing:border-box;*/
+  border-bottom: 1px solid white;
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
+
+/**
+* Stagger Leave (hide) animation
+*/
+.animate-repeat.ng-leave-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+
+  /* in case the stagger doesn't work then these two values
+  must be set to 0 to avoid an accidental CSS inheritance */
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+/**
+* Stagger ENTER ANIMATION
+*/
+.animate-repeat.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive enter animation */
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+
+  /* in case the stagger doesn't work then these two values
+  must be set to 0 to avoid an accidental CSS inheritance */
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
 }
