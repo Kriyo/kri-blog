@@ -2,6 +2,9 @@
     margin: 20px 0;
 }
 
+h1, h2, h3, h4{
+  font-family: 'LeagueGothicRegular';
+}
 #banner {
     border-bottom: none;
     margin-top: -20px;
@@ -22,15 +25,16 @@
     background: url('/assets/images/bigbackground.jpg') !important;
     .container{
       img{
-        border-radius: 100%;
-        -moz-box-shadow: 0px 0px 10px #FFF;
-        -webkit-box-shadow: 0px 0px 10px #FFF;
-        box-shadow: 0px 0px 10px #FFF;
-        border: 2px solid #FFF;
+        width:55%;
+        margin-left: -100px;
       }
       h1, p{
-        color: #222;
-        text-shadow: 0px 2px 3px #555;
+        margin: -60px 0px 0px 66px;
+        text-shadow: 0px 2px 15px #000;
+        font-family: 'LeagueGothicRegular';
+        font-size: 2em;
+        text-transform: uppercase;
+        color: #41FF00 !important;
       }
       h1, h2{
         font-weight: 100;
@@ -40,7 +44,9 @@
       color: rgba(0,0,0,0.5);
     }
 }
-
+.pop-top{
+  margin-top:50px;
+}
 #ribbon {
 	width: 180px;
 	height: 280px;
@@ -162,8 +168,51 @@
     transform: rotate(45deg);
   }
 }
+
 .blog-container{
-  background: #f9f9f9;
+  margin: 20px;
+  background: #2b2b2b;
+  padding: 20px;
+  border: 1px solid $light-green;
+}
+
+.srv-container{
+  position: relative;
+  width: auto;
+  height: 200px;
+  background-color: $dark-grey;
+  a{
+    position: relative;
+    top: 33%;
+    text-align: center;
+    background: transparent;
+    color: #41FF00;
+    font-size: 3em;
+    border: none;
+  }
+  &:after {
+  	top: 100%;
+  	left: 50%;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  	border-color: rgba(43, 43, 43, 0);
+  	border-top-color: #2b2b2b;
+  	border-width: 15px;
+  	margin-left: -15px;
+  }
+}
+.srv-sub-container{
+  padding-top:10px;
+  text-align:center;
+
+  h3{
+    font-family: 'LeagueGothicRegular';
+    text-transform: uppercase;
+  }
 }
 
 .footer {
@@ -177,8 +226,6 @@
 .animate-repeat {
   line-height:40px;
   list-style:none;
-  /*box-sizing:border-box;*/
-  border-bottom: 1px solid white;
   -webkit-transition: 1s linear all;
   transition: 1s linear all;
 }

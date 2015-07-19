@@ -3,16 +3,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <h1>Sign up</h1>
+      <h3 class="signup-title">Registration</h3>
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-4 col-sm-offset-2">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
-
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
-
-          <input type="text" name="name" class="form-control" ng-model="user.name"
+          <input type="text" placeholder="Name" name="name" class="form-control" ng-model="user.name"
                  required/>
           <p class="help-block" ng-show="form.name.$error.required && submitted">
             A name is required
@@ -21,9 +18,7 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                             'has-error': form.email.$invalid && submitted }">
-          <label>Email</label>
-
-          <input type="email" name="email" class="form-control" ng-model="user.email"
+          <input type="email" placeholder="Email" name="email" class="form-control" ng-model="user.email"
                  required
                  mongoose-error/>
           <p class="help-block" ng-show="form.email.$error.email && submitted">
@@ -39,9 +34,7 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                             'has-error': form.password.$invalid && submitted }">
-          <label>Password</label>
-
-          <input type="password" name="password" class="form-control" ng-model="user.password"
+          <input type="password" placeholder="Password" name="password" class="form-control" ng-model="user.password"
                  ng-minlength="3"
                  required
                  mongoose-error/>
@@ -55,28 +48,38 @@
         </div>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
-          </button>
-          <a class="btn btn-default btn-lg btn-register" href="/login">
-            Login
-          </a>
-        </div>
-
-        <hr>
-        <div>
-          <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
-            <i class="fa fa-facebook"></i> Connect with Facebook
-          </a>
-          <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
-            <i class="fa fa-google-plus"></i> Connect with Google+
-          </a>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-            <i class="fa fa-twitter"></i> Connect with Twitter
-          </a>
+          <div class="col-lg-6">
+            <button class="fm-btn" type="submit">
+              Sign up
+            </button>
+          </div>
+          <div class="col-lg-6">
+            <a class="fm-btn" href="/login">
+              Login
+            </a>
+          </div>
         </div>
       </form>
     </div>
+
+    <div class="col-sm-4">
+      <div class="breaker">
+        <div class="row">
+          <a class="btn btn-facebook btn-socials" href="" ng-click="loginOauth('facebook')">
+            <i class="fa fa-facebook"></i> Connect with Facebook
+          </a>
+        </div>
+        <div class="row">
+          <a class="btn btn-google-plus btn-socials" href="" ng-click="loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Connect with Google+
+          </a>
+        </div>
+        <div class="row">
+          <a class="btn btn-twitter btn-socials" href="" ng-click="loginOauth('twitter')">
+            <i class="fa fa-twitter"></i> Connect with Twitter
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <hr>
 </div>

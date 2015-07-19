@@ -1,13 +1,24 @@
 .navbar.navbar-default.navbar-fixed-top{
-  border-bottom: none;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid red;
-  height: 55px;
-  top: 0;
-  position: absolute;
-  /* hold tight... */
-  visibility: none;
-  /* we'll override these shortly */
-  z-index: 1000;
+  background-color: #000;
+  height: 50px;
   width: 100%;
+  border-bottom: 2px solid $light-green;
+}
+.nav-text{
+  a{
+    font-family: 'LeagueGothicRegular';
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+}
+#navbar-main > ul.nav.navbar-nav.nav-text > li.ng-scope.active > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  height: 50px;
+  background-color: #000;
+  border-bottom: 2px dashed $light-green;
+  color: #41FF00 !important;
+}
+.navbar-logo{
+  margin-top: -14px;
+  width: auto;
+  height: 50px;
 }

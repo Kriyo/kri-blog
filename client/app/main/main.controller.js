@@ -44,7 +44,6 @@ angular.module('ngkriApp')
       socket.unsyncUpdates('thing');
     });
 
-
     // API request for pulling in the blogposts
     $http.get('/api/blogPost').success(function(blogPosts) {
       //console.log(blogPosts._id.getTimestamp() );

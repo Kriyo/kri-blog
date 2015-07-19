@@ -1,0 +1,72 @@
+.about-image{
+  float: left;
+  padding: 20px;
+  &:after{
+    clear:both;
+  }
+}
+.about-image-right{
+  float: right;
+  padding: 20px;
+  &:after{
+    clear:both;
+  }
+}
+
+.about-content{
+  padding:20px;
+}
+
+.team-container {
+  padding: 20px 0;
+  text-align: center;
+  img{
+    transition: all .2s ease-in-out;
+    &:hover{
+
+    }
+  }
+  &:hover{
+    img{
+      transform: scale(0.9);
+      border: 10px solid white;
+      -webkit-transform: scale(0.9);
+      margin-bottom: -10px;
+    }
+    .team-name{
+      border-color: white;
+      h3{
+        color: $light-green;
+      }
+      p, span{
+        color: white;
+      }
+    }
+  }
+}
+.team-name{
+  border: 1px solid $light-green;
+  padding: 10px;
+  width: 178px;
+  margin: 0 auto;
+  p, span{
+    color: $light-green;
+  }
+}
+.about-sidemenu{
+  position: fixed;
+  font-family: 'LeagueGothicRegular';
+  list-style: none;
+  padding: 20px 0 0 0;
+  li > a{
+    font-size: 22px;
+    color: #777;
+    &:hover{
+      color: $light-green;
+      text-decoration: none;
+    }
+  }
+  .active>a{
+    color: $light-green !important;
+  }
+}
