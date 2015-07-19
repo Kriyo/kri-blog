@@ -17,7 +17,7 @@ h1, h2, h3, h4{
 }
 .hero-unit {
     position: relative;
-    height: 700px;
+    height: 373px;
     padding: 30px 15px;
     color: #F5F5F5;
     text-align: center;
@@ -47,6 +47,32 @@ h1, h2, h3, h4{
 .pop-top{
   margin-top:50px;
 }
+
+#mainContent{
+  .main-featured{
+    width: 100%;
+    height: auto;
+    padding: 0 0 30px 0;
+  }
+  .push-top-30{
+    padding-top:30px;
+  }
+}
+.article-thumb{
+  h4{
+    font-size: 20px;
+    color: $light-green;
+  }
+  p{
+
+  }
+  span{
+
+  }
+}
+
+
+
 #ribbon {
 	width: 180px;
 	height: 280px;
@@ -270,4 +296,43 @@ h1, h2, h3, h4{
   must be set to 0 to avoid an accidental CSS inheritance */
   -webkit-transition-duration: 0s;
   transition-duration: 0s;
+}
+
+.image {
+    position:relative;
+    width:100%;
+    height:auto;
+}
+.image img {
+    width:100%;
+    vertical-align:top;
+}
+.image:after, .image:before {
+    position:absolute;
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.image:after {
+    content:'\A';
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+}
+.image:before {
+    content: attr(data-content);
+    width:100%;
+    color:#fff;
+    z-index:1;
+    bottom:0;
+    padding:4px 10px;
+    text-align:center;
+    background:red;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+.image:hover:after, .image:hover:before {
+    opacity:1;
 }
