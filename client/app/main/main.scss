@@ -15,6 +15,16 @@ h1, h2, h3, h4{
     line-height: 1;
     letter-spacing: -1px;
 }
+.carousel-caption{
+  padding-bottom: 80px;
+  h1{
+    font-size:5em;
+    text-shadow: 1px 1px 2px #000;
+  }
+  p{
+    font-size: 1.2em;
+  }
+}
 .hero-unit {
     position: relative;
     height: 373px;
@@ -58,19 +68,62 @@ h1, h2, h3, h4{
     padding-top:30px;
   }
 }
+#mainNews{
+  text-align:center;
+  .main-featured{
+    padding: 0;
+  }
+  h4{
+    font-size: 20px;
+    color: $light-green;
+  }
+}
 .article-thumb{
   h4{
     font-size: 20px;
     color: $light-green;
   }
-  p{
-
-  }
-  span{
-
+}
+.client-thumb{
+  padding-bottom: 15px;
+  a{
+    display: inline;
+    padding: 10px;
+    font-size: 20px;
+    color: $light-green;
+    font-family: 'LeagueGothicRegular';
   }
 }
 
+#paraSplitter{
+  background: url('http://portfolio-kwarc.pl/music-nation-bootstrap-v-1-1/img/slider-photos/slogan-background.jpg');
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-top: 2px solid $light-green;
+  border-bottom: 2px solid $light-green;
+  position: relative;
+  height: 220px;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index:3;
+  .overlay{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('http://portfolio-kwarc.pl/music-nation-bootstrap-v-1-1/img/pixel-pattern.png');
+    background-repeat: repeat;
+  }
+  .para-content {
+    position: relative;
+    z-index: 3;
+    margin: 55px;
+    text-align: center;
+  }
+}
 
 
 #ribbon {
@@ -329,7 +382,8 @@ h1, h2, h3, h4{
     bottom:0;
     padding:4px 10px;
     text-align:center;
-    background:red;
+    background: #000;
+    border: 1px solid $light-green;
     box-sizing:border-box;
     -moz-box-sizing:border-box;
 }
